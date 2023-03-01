@@ -1,4 +1,4 @@
-package ObjectOrientedProgramming;
+package ru.sber.ObjectOrientedProgramming;
 import javax.swing.text.Style;
 import java.util.Scanner;
 public class Matrix {

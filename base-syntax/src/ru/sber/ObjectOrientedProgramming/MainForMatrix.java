@@ -1,4 +1,4 @@
-package ObjectOrientedProgramming;
+package ru.sber.ObjectOrientedProgramming;
 
 import java.util.Scanner;
 

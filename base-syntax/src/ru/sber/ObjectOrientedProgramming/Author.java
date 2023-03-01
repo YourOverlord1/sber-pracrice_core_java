@@ -1,4 +1,4 @@
-package ObjectOrientedProgramming;
+package ru.sber.ObjectOrientedProgramming;
 
 public class Author {
     String name;

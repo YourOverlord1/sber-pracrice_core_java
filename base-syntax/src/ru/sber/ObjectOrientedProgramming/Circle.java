@@ -1,4 +1,4 @@
-package ObjectOrientedProgramming;
+package ru.sber.ObjectOrientedProgramming;
 import static java.lang.Math.PI;
 
 public class Circle {

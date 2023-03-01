@@ -1,4 +1,4 @@
-package ObjectOrientedProgramming;
+package ru.sber.ObjectOrientedProgramming;
 
 public class Book {
     String title;

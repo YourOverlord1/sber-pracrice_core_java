@@ -1,4 +1,4 @@
-package ObjectOrientedProgramming;
+package ru.sber.ObjectOrientedProgramming;
 
 public class MainForPhone {
     public static void main (String[] args){
