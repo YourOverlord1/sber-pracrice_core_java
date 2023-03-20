@@ -13,7 +13,6 @@ class KeyValue {
         this.value = value;
     }
 
-    @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -27,7 +26,6 @@ class KeyValue {
         return Objects.equals(this.key, other.key) && Objects.equals(this.value, other.value);
     }
 
-    @Override
     public int hashCode() {
         return Objects.hashCode(this.key);
     }

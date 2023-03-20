@@ -10,3 +10,4 @@ public interface Deque {
     Object removeFirst() throws NoSuchElementException;
     Object removeLast() throws NoSuchElementException;
 }
+
