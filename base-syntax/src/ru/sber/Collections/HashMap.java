@@ -1,4 +1,4 @@
-package ru.sber.Collection;
+package ru.sber.Collections;
 
 import java.util.Arrays;
 import java.util.Iterator;

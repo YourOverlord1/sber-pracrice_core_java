@@ -1,4 +1,4 @@
-package ru.sber.Collection;
+package ru.sber.Collections;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 public class ArrayList implements List {

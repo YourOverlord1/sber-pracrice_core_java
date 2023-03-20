@@ -1,4 +1,4 @@
-package ru.sber.Collection;
+package ru.sber.Collections;
 import java.util.NoSuchElementException;
 public interface Deque {
     void addFirst(Object item);

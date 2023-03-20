@@ -1,4 +1,4 @@
-package ru.sber.Collection;
+package ru.sber.Collections;
 
 public interface Map {
     int size();

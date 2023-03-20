@@ -1,8 +1,5 @@
-package ru.sber.Collection;
+package ru.sber.Collections;
 
-import java.sql.SQLOutput;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 public class MainArrayList {
     public static void main(String[] args) {
