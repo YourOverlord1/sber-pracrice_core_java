@@ -4,22 +4,22 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Objects;
 
-public class HashMap implements Map {
+public class HashMap<K, V> implements Map<K, V> {
 
-    private final ArrayList[] buckets;
+    private final ArrayList<KeyValue<K, V>>[] buckets;
 
     private int size;
 
-    private ArrayList getBucket(int index) {
+    private ArrayList<KeyValue<K, V>> getBucket(int index) {
         if (this.buckets[index] == null) {
-            return (this.buckets[index] = new ArrayList());
+            return (this.buckets[index] = new ArrayList<KeyValue<K, V>>());
         }
 
         return this.buckets[index];
     }
 
-    private KeyValue getByKey(Object key) {
-        ArrayList bucket = getBucket(Objects.hashCode(key) % buckets.length);
+    private KeyValue<K, V> getByKey(Object key) {
+        ArrayList<KeyValue<K, V>> bucket = getBucket(Objects.hashCode(key) % buckets.length);
 
         for (Object rawKvp : buckets) {
             KeyValue kvp = (KeyValue) rawKvp;
@@ -32,8 +32,8 @@ public class HashMap implements Map {
         return null;
     }
 
-    private KeyValue getByValue(Object value) {
-        for (ArrayList bucket : this.buckets) {
+    private KeyValue<K, V> getByValue(Object value) {
+        for (ArrayList<KeyValue<K, V>> bucket : this.buckets) {
             if (bucket == null) {
                 continue;
             }
@@ -66,7 +66,7 @@ public class HashMap implements Map {
         return false;
     }
 
-    public boolean containsKey(Object key) {
+    public boolean containsKey(K key) {
         if (key == null) {
             return false;
         }
@@ -74,12 +74,12 @@ public class HashMap implements Map {
         return getByKey(key) != null;
     }
 
-    public boolean containsValue(Object value) {
+    public boolean containsValue(V value) {
         return getByValue(value) != null;
     }
 
     public Object get(Object key) {
-        KeyValue kvp = getByKey(key);
+        KeyValue<K, V> kvp = getByKey(key);
 
         if (kvp == null) {
             return null;
@@ -89,7 +89,7 @@ public class HashMap implements Map {
     }
 
     public Object put(Object key, Object value) {
-        ArrayList bucket = getBucket(Objects.hashCode(key) % buckets.length);
+        ArrayList<KeyValue<K, V>> bucket = getBucket(Objects.hashCode(key) % buckets.length);
 
         for (int i = 0; i < bucket.size(); i++) {
             KeyValue kvp = (KeyValue) bucket.get(i);
@@ -107,8 +107,8 @@ public class HashMap implements Map {
     }
 
     public Object remove(Object key) {
-        ArrayList bucket = getBucket(Objects.hashCode(key) % buckets.length);
-        Iterator<Object> it = bucket.iterator();
+        ArrayList<KeyValue<K, V>> bucket = getBucket(Objects.hashCode(key) % buckets.length);
+        Iterator<KeyValue<K, V>> it = bucket.iterator();
         int index = 0;
 
         while (it.hasNext()) {
@@ -138,7 +138,7 @@ public class HashMap implements Map {
     public Collection values() {
         ArrayList newCollection = new ArrayList();
 
-        for (ArrayList bucket : this.buckets) {
+        for (ArrayList<KeyValue<K, V>> bucket : this.buckets) {
             if (bucket == null) {
                 continue;
             }
@@ -154,7 +154,7 @@ public class HashMap implements Map {
     public Collection keySet() {
         ArrayList newCollection = new ArrayList();
 
-        for (ArrayList bucket : this.buckets) {
+        for (ArrayList<KeyValue<K, V>> bucket : this.buckets) {
             if (bucket == null) {
                 continue;
             }
@@ -170,7 +170,7 @@ public class HashMap implements Map {
     public Collection entrySet() {
         ArrayList newCollection = new ArrayList();
 
-        for (ArrayList bucket : this.buckets) {
+        for (ArrayList<KeyValue<K, V>> bucket : this.buckets) {
             if (bucket == null) {
                 continue;
             }

@@ -1,13 +1,13 @@
 package ru.sber.Collections;
 import java.util.NoSuchElementException;
-public interface Deque {
-    void addFirst(Object item);
-    void addLast(Object item);
-    Object getFirst() throws NoSuchElementException;
-    Object getLast() throws NoSuchElementException;
-    Object pollFirst();
-    Object pollLast();
-    Object removeFirst() throws NoSuchElementException;
-    Object removeLast() throws NoSuchElementException;
+public interface Deque<T> extends  Collection<T>{
+    void addFirst(T item);
+    void addLast(T item);
+    T getFirst() throws NoSuchElementException;
+    T getLast() throws NoSuchElementException;
+    T pollFirst();
+    T pollLast();
+    T removeFirst() throws NoSuchElementException;
+    T removeLast() throws NoSuchElementException;
 }
 

@@ -2,13 +2,13 @@ package ru.sber.Collections;
 
 import java.util.Objects;
 
-class KeyValue {
+public class KeyValue <K, V>{
 
-    public Object key;
+    public K key;
 
-    public Object value;
+    public V value;
 
-    public KeyValue(Object key, Object value) {
+    public KeyValue(K key, V value) {
         this.key = key;
         this.value = value;
     }

@@ -3,7 +3,7 @@ package ru.sber.Collections;
 import java.util.Scanner;
 public class MainArrayList {
     public static void main(String[] args) {
-        ArrayList arrayList = new ArrayList();
+        ArrayList<Integer> arrayList = new ArrayList();
         System.out.println("Введите количество элементов");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
@@ -25,7 +25,7 @@ public class MainArrayList {
         System.out.println("Добавьте еще одно число");
         number = scanner.nextInt();
         arrayList.add(number);
-        System.out.println("Размер list стал" + arrayList.size());
+        System.out.println("Размер list стал " + arrayList.size());
         System.out.println();
 
         System.out.println("Введите элемент, который хотите удалить");

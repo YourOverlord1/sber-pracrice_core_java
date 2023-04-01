@@ -1,10 +1,10 @@
 package ru.sber.Collections;
-public interface List extends Collection{
-    void add(int index, Object item);
-    void set(int index, Object item);
-    Object get(int index) throws IndexOutOfBoundsException;
-    int indexOf(Object item);
-    int lastIndexOf(Object item);
-    Object remove(int index) throws IndexOutOfBoundsException;
-    List subList(int from, int to) throws IndexOutOfBoundsException;
+public interface List<T> extends Collection<T> {
+    void add(int index, T item);
+    void set(int index, T item);
+    T get(int index) throws IndexOutOfBoundsException;
+    int indexOf(T item);
+    int lastIndexOf(T item);
+    T remove(int index) throws IndexOutOfBoundsException;
+    List<T> subList(int from, int to) throws IndexOutOfBoundsException;
 }

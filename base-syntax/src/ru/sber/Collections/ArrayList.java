@@ -1,9 +1,9 @@
 package ru.sber.Collections;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-public class ArrayList implements List {
-    private static class Iterator implements java.util.Iterator<Object> {
-        public Iterator(ArrayList list) {
+public class ArrayList<T> implements List<Object> {
+    private static class Iterator<T> implements java.util.Iterator<T> {
+        public Iterator(ArrayList<T> list) {
             this.list = list;
         }
 
@@ -12,12 +12,12 @@ public class ArrayList implements List {
         }
 
         private int CurI = 0;
-        private final ArrayList list;
+        private final ArrayList<T> list;
 
 
-        public Object next() throws NoSuchElementException {
+        public T next() throws NoSuchElementException {
             if (hasNext()) {
-                return list.get(CurI++);
+                return (T) list.get(CurI++);
             }
 
             throw new NoSuchElementException();
@@ -35,7 +35,7 @@ public class ArrayList implements List {
         }
     }
 
-    private ArrayList(Object[] data, int size) {
+    private ArrayList(T[] data, int size) {
         this.data = data;
         this.size = size;
     }
@@ -118,7 +118,7 @@ public class ArrayList implements List {
     public Object get(int index) throws IndexOutOfBoundsException {
         checkI(index);
 
-        return this.data[index];
+        return (T) this.data[index];
     }
 
     public int indexOf(Object item) {
@@ -157,19 +157,20 @@ public class ArrayList implements List {
         System.arraycopy(this.data, index + 1, this.data, index, this.size - index);
         this.size--;
 
-        return objectToReturn;
+        return  objectToReturn;
     }
 
-    public List subList(int left, int right) throws IndexOutOfBoundsException {
+    public List<Object> subList(int left, int right) throws IndexOutOfBoundsException {
         checkI(left);
         checkI(right);
         int copySize = right - left;
         Object[] newlist = new Object[Math.max(copySize, 10)];
         System.arraycopy(this.data, right, newlist, 0, copySize);
-        return new ArrayList(newlist, left - right);
+        new ArrayList(newlist, left - right);
+        return null;
     }
 
-    public Iterator iterator() {
+    public java.util.Iterator<T> iterator() {
         return new Iterator(this);
     }
 }
