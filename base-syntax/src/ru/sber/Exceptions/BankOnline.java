@@ -1,8 +1,14 @@
 package ru.sber.Exceptions;
 
 public class BankOnline {
-    private static final String[] BLOCKED_CARDS = {"1111111111111111", "2222222222222222", "3333333333333333"};
+    private static final Set<String> BLOCKED_CARDS = new HashSet<>();
     private static final double TRANSFER_LIMIT = 50000;
+
+    static {
+        BLOCKED_CARDS.add("1111111111111111");
+        BLOCKED_CARDS.add("2222222222222222");
+        BLOCKED_CARDS.add("3333333333333333");
+    }
 
     public void send(String cardNumber, Double money) throws BankOnlineException {
         // Проверка на null-аргументы
