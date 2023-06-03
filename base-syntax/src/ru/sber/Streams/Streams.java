@@ -1,4 +1,4 @@
-package ru.sber;
+package ru.sber.Streams;
 import java.util.*;
 import java.util.stream.*;
 
@@ -35,32 +35,5 @@ public class Streams
         String binaryString = "1010101010";
         boolean result = Stream.of(binaryString.split("")).map(x -> x.equals("1")).reduce(true, (x, y) -> x && y);
         System.out.println("Результат через 'И': " + result);
-    }
-}
-
-// Задание 2
-class StreamContainer {
-    private String name;
-    private long count;
-
-    public StreamContainer(String name, long count) {
-        this.name = name;
-        this.count = count;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public long getCount() {
-        return count;
-    }
-
-    @Override
-    public String toString() {
-        return "StreamContainer{" +
-                "name='" + name + '\'' +
-                ", count=" + count +
-                '}';
     }
 }
